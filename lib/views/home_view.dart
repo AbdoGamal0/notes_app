@@ -7,8 +7,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notes App'),
-      ),
+          title: const Text('Notes App'), backgroundColor: Colors.black12),
       body: const Center(
         child: Text('Home View'),
       ),
