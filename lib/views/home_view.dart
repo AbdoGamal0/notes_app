@@ -36,7 +36,11 @@ class HomeView extends StatelessWidget {
                     SizedBox(
                       height: 32,
                     ),
-                    CustomButton(),
+                    CustomButton(
+                      onPressed: () {
+                        // print('Hello world');
+                      },
+                    ),
                     SizedBox(
                       height: 16,
                     )
