@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/views/home_view.dart';
+import 'package:notes_app/features/AddNoteCubit/presentation/pages/home_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

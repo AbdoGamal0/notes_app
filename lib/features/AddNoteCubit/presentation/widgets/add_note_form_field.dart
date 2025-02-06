@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'custom_button.dart';
-import 'custom_text_field.dart';
+import '../../../../views/widgets/custom_button.dart';
+import '../../../../views/widgets/custom_text_field.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/views/widgets/notes_view_body.dart';
+import 'package:notes_app/features/AddNoteCubit/presentation/widgets/notes_view_body.dart';
 
-import 'widgets/add_note_form_field.dart';
+import '../widgets/add_note_form_field.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
