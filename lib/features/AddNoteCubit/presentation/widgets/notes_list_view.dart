@@ -18,7 +18,7 @@ class NotesListView extends StatelessWidget {
         return ListView.builder(
           padding: EdgeInsets.zero,
           itemCount: note.length,
-          itemBuilder: (index, context) => NotesItem(),
+          itemBuilder: (context, index) => NotesItem(note: note[index]),
         );
       },
     );
