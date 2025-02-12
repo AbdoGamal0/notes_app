@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/views/widgets/custom_button.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/views/widgets/custom_text_field.dart';
 
+import '../../features/AddNoteCubit/data/models/note_model.dart';
+import '../../features/AddNoteCubit/presentation/cubit/create_note_cubit/notes_cubit.dart';
 import 'custom_app_bar.dart';
+import 'edit_note_color.dart';
 
-class EditNoteViewBody extends StatelessWidget {
-  const EditNoteViewBody({super.key});
+class EditNoteViewBody extends StatefulWidget {
+  const EditNoteViewBody({super.key, required this.notemodel});
+  final NoteModel notemodel;
 
+  @override
+  State<EditNoteViewBody> createState() => _EditNoteViewBodyState();
+}
+
+class _EditNoteViewBodyState extends State<EditNoteViewBody> {
+  String? title;
+  String? subTitle;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,26 +28,40 @@ class EditNoteViewBody extends StatelessWidget {
           CustomAppBar(
             title: 'Edit Notes',
             icon: Icons.check,
+            onTap: () {
+              widget.notemodel.title = title ?? widget.notemodel.title;
+              widget.notemodel.subTitle = subTitle ?? widget.notemodel.subTitle;
+              widget.notemodel.save();
+              Navigator.pop(context);
+              BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+            },
           ),
           SizedBox(
             height: 16,
           ),
           CustomTextField(
-            hintText: 'Title',
+            hintText: widget.notemodel.title,
+            onChanged: (value) {
+              title = value;
+            },
           ),
           SizedBox(
             height: 16,
           ),
           CustomTextField(
-            hintText: 'Content',
+            onChanged: (value) {
+              subTitle = value;
+            },
+            hintText: widget.notemodel.subTitle,
             maxlines: 5,
           ),
           SizedBox(
             height: 40,
           ),
-          CustomButton(onPressed: () {
-            print('object');
-          })
+          EditColorListView(note: widget.notemodel),
+          // CustomButton(onPressed: () {
+
+          // })
         ],
       ),
     );

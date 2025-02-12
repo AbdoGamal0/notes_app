@@ -13,13 +13,17 @@ class NotesItem extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => EditNoteView()));
+            context,
+            MaterialPageRoute(
+                builder: (context) => EditNoteView(
+                      note: note,
+                    )));
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         margin: EdgeInsets.only(top: 16),
         decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 216, 201, 201),
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(15),
         ),
         child: Column(
