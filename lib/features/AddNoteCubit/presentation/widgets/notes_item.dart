@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/features/AddNoteCubit/data/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
+
+import '../cubit/create_note_cubit/notes_cubit.dart';
 
 class NotesItem extends StatelessWidget {
   const NotesItem({super.key, required this.note});
@@ -13,7 +16,7 @@ class NotesItem extends StatelessWidget {
             context, MaterialPageRoute(builder: (context) => EditNoteView()));
       },
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         margin: EdgeInsets.only(top: 16),
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 216, 201, 201),
@@ -38,11 +41,12 @@ class NotesItem extends StatelessWidget {
                 color: Colors.black,
                 onPressed: () {
                   note.delete();
+                  BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                 },
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 24.0),
+              padding: const EdgeInsets.only(right: 24.0, bottom: 8),
               child: Text(
                 note.date,
                 style: TextStyle(fontSize: 15, color: Colors.black45),
