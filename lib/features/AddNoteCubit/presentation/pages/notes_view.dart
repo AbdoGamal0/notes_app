@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../cubit/add_note_cubit/add_note_cubit.dart';
 import '../cubit/create_note_cubit/notes_cubit.dart';
-import '../widgets/add_note_form_field.dart';
+import '../widgets/add_note_form_bottom_sheet.dart';
 import '../widgets/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
@@ -42,7 +42,7 @@ class NotesView extends StatelessWidget {
                       child: AbsorbPointer(
                         absorbing: state is AddNoteLoading,
                         child: const SingleChildScrollView(
-                          child: AddNoteForm(),
+                          child: AddNoteBottomSheet(),
                         ),
                       ),
                     );

@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/features/AddNoteCubit/data/models/note_model.dart';
 
-import '../../../../views/widgets/custom_button.dart';
-import '../../../../views/widgets/custom_text_field.dart';
+import '../../../edit_note_view/presentation/widgets/custom_button.dart';
+import '../../../edit_note_view/presentation/widgets/custom_text_field.dart';
 import '../cubit/add_note_cubit/add_note_cubit.dart';
 import 'pick_color.dart';
 
-class AddNoteForm extends StatefulWidget {
-  const AddNoteForm({
+class AddNoteBottomSheet extends StatefulWidget {
+  const AddNoteBottomSheet({
     super.key,
   });
 
   @override
-  State<AddNoteForm> createState() => _AddNoteFormState();
+  State<AddNoteBottomSheet> createState() => _AddNoteBottomSheetState();
 }
 
-class _AddNoteFormState extends State<AddNoteForm> {
+class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, subTitle;

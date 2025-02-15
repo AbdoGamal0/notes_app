@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/features/AddNoteCubit/presentation/pages/notes_view.dart';
 
+import 'features/AddNoteCubit/presentation/cubit/change_app_theme/theme_cubit.dart';
 import 'features/AddNoteCubit/presentation/cubit/create_note_cubit/notes_cubit.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,17 +10,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NotesCubit(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          fontFamily: 'Poppins',
-          useMaterial3: true,
-          brightness: Brightness.dark,
-          scaffoldBackgroundColor: Colors.black87,
-        ),
-        home: NotesView(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => NotesCubit()),
+        BlocProvider(create: (context) => ThemeCubit()),
+      ],
+      child: BlocBuilder<ThemeCubit, ThemeData>(
+        builder: (context, theme) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: theme,
+            home: NotesView(),
+          );
+        },
       ),
     );
   }

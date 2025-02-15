@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 import 'package:notes_app/features/AddNoteCubit/data/models/note_model.dart';
 
-import '../../features/AddNoteCubit/presentation/widgets/pick_color.dart';
+import '../../../AddNoteCubit/presentation/widgets/pick_color.dart';
 
 class EditColorListView extends StatefulWidget {
   const EditColorListView({super.key, required this.note});
