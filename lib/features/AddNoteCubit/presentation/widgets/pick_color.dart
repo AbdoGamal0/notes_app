@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/features/AddNoteCubit/presentation/cubit/add_note_cubit/add_note_cubit.dart';
 
-import '../../../../constants.dart';
+import '../../../../core/utils/constants.dart';
 
 class ColorItem extends StatelessWidget {
   const ColorItem({

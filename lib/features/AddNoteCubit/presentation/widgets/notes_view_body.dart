@@ -26,7 +26,7 @@ class _NotesViewBodyState extends State<NotesViewBody> {
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Column(
         children: [
-          const SizedBox(height: 8),
+          const SizedBox(height: 24),
           BlocBuilder<ThemeCubit, ThemeData>(
             builder: (context, state) {
               return CustomAppBar(

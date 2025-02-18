@@ -41,6 +41,7 @@ dependencies:
   modal_progress_hud_nsn: ^0.5.1
   intl: ^0.20.2
   flutter_native_splash: ^2.4.4
+  flutter_launcher_icons: ^0.14.3
 
 dev_dependencies:
   flutter_test:
@@ -81,20 +82,21 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/images/AppLogo.png
+  android_gravity: fill
+
   fonts:
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins-Regular.ttf
 
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/to/font-from-package
-flutter_native_splash:
-  color: "#FFFFFF"
-  image: "assets/images/AppLogo.png"
+flutter_icons:
   android: true
   ios: true
   web: true
-  web_image: "assets/images/AppLogo.png"
-  android_gravity: center
-  ios_content_mode: center
-  background_color: "#FFFFFF"
+  image_path: "assets/images/pana.png"
+
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package

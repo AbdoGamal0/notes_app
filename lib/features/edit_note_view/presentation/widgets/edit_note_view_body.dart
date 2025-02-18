@@ -24,10 +24,11 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Column(
         children: [
-          SizedBox(height: 8),
+          SizedBox(height: 24),
           CustomAppBar(
             title: 'Edit Notes',
             icon: Icons.check,
+            iconColor: Colors.green,
             onTap: () {
               widget.notemodel.title = title ?? widget.notemodel.title;
               widget.notemodel.subTitle = subTitle ?? widget.notemodel.subTitle;

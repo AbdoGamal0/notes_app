@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:notes_app/features/AddNoteCubit/data/models/note_model.dart';
 
-import '../../../../../constants.dart';
+import '../../../../../core/utils/constants.dart';
 
 part 'add_note_state.dart';
 

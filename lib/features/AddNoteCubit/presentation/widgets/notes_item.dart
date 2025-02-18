@@ -70,6 +70,7 @@ class _NotesItemState extends State<NotesItem> {
                         widget.note.delete();
                         // ignore: use_build_context_synchronously
                         BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                        setState(() => isDelete = false);
                       });
                     }
                   },

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/constants.dart';
+import 'package:notes_app/core/utils/constants.dart';
 import 'package:notes_app/features/AddNoteCubit/data/models/note_model.dart';
 
 import '../../../AddNoteCubit/presentation/widgets/pick_color.dart';
@@ -33,7 +33,8 @@ class _EditColorListViewState extends State<EditColorListView> {
             onTap: () {
               setState(() {
                 currentIndex = index;
-                widget.note.color = kColors[index] as int;
+                // ignore: deprecated_member_use
+                widget.note.color = kColors[index].value;
               });
             },
             child: Padding(

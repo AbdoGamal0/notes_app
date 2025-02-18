@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/features/AddNoteCubit/data/models/note_model.dart';
 
+import '../../../../core/utils/constants.dart';
 import '../../../edit_note_view/presentation/widgets/custom_button.dart';
 import '../../../edit_note_view/presentation/widgets/custom_text_field.dart';
 import '../cubit/add_note_cubit/add_note_cubit.dart';
@@ -62,7 +63,7 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
                       subTitle: subTitle!,
                       color: Colors.deepOrangeAccent.r.toInt(),
                       date:
-                          "${DateTime.now().month} ${DateTime.now().day},${DateTime.now().year}");
+                          "${months[DateTime.now().month - 1]} ${DateTime.now().day},${DateTime.now().year}");
 
                   BlocProvider.of<AddNoteCubit>(context).addNote(note);
                 } else {
